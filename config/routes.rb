@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  get 'i/:id' => "images#cached_image", as: :cache_image
   resources :images
 end
