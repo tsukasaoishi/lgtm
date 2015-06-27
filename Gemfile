@@ -44,4 +44,5 @@ group :development, :test do
 end
 
 gem "slim-rails"
-gem "dalli"
+gem 'actionpack-action_caching'
+gem 'redis-rails'

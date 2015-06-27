@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  caches_action  :cached_image
+
   def cached_image
     image = Image.find(params[:id])
     send_data image.cached_image, type: image.content_type, disposition: 'inline'
