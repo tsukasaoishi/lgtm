@@ -10,6 +10,11 @@ class ImagesController < ApplicationController
     send_data image.cached_image, type: image.content_type, disposition: 'inline'
   end
 
+  def random
+    @image = Image.random_pickup
+    render :show
+  end
+
   def show
     @image = Image.find(params[:id])
   end

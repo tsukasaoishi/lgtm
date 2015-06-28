@@ -54,6 +54,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  root 'images#index'
   get 'i/:id' => "images#cached_image", as: :cache_image
-  resources :images
+  resources :images do
+    get 'random', on: :collection
+  end
 end
