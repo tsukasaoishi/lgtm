@@ -1,4 +1,2 @@
-= render partial: "navi"
-
 p = text_field_tag "", %Q|![LGTM](#{cache_image_url(@image)})|, readonly: true, onclick: "this.select()"
 = image_tag cache_image_url(@image)
