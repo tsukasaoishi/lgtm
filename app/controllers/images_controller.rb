@@ -1,13 +1,12 @@
 class ImagesController < ApplicationController
-  caches_action  :cached_image
-
   def index
     @images = Image.order("created_at DESC").limit(30)
   end
 
   def cached_image
     image = Image.find(params[:id])
-    send_data image.cached_image, type: image.content_type, disposition: 'inline'
+    data, content_type = image.cached_image_and_type
+    send_data data, type: content_type, disposition: 'inline'
   end
 
   def random

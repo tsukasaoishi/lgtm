@@ -45,5 +45,4 @@ end
 
 gem "unicorn"
 gem "slim-rails"
-gem 'actionpack-action_caching'
 gem 'redis-rails'

@@ -22,17 +22,15 @@ class Image < ActiveRecord::Base
     end
   end
 
-  def cached_image
-    read_image = open(url, "User-Agent" => "LGTM(https://github.com/tsukasaoishi/lgtm)")
-    @content_type = read_image.content_type
-    read_image.read
-  end
-
-  def content_type
-    @content_type || "image/jpeg"
+  def cached_image_and_type
+    Rails.cache.fetch("#{self.class.name}_#{id}_cached_image_and_type") do
+      read_image = open(url, "User-Agent" => "LGTM(https://github.com/tsukasaoishi/lgtm)")
+      [read_image.read, read_image.content_type]
+    end
   end
 
   private
+
 
   def flush_ids
     self.class.flush_ids
