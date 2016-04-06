@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem "slim-rails"
 gem 'redis-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'

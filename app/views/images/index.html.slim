@@ -1,0 +1,8 @@
+= render partial: "navi"
+
+= paginate @images
+
+- @images.each do |image|
+  = link_to image_tag(raw_datum_url(image), width: "120px", height: "120px"), image_path(image)
+
+= paginate @images
