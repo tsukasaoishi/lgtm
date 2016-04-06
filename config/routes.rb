@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'images#index'
 
-  get 'i/:id' => "images#cached_image", as: :cache_image
+  resources :raw_data, only: %i(show)
 
   resources :images
 end
