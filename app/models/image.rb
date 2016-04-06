@@ -8,7 +8,7 @@ class Image < ActiveRecord::Base
   RESIZE_WIDTH = "480x480"
 
   def cached_image_and_type
-    #Rails.cache.fetch("#{self.class.name}_#{id}_cached_image_and_type") do
+    Rails.cache.fetch("#{self.class.name}_#{id}_cached_image_and_type") do
       read_image = open(url, "User-Agent" => "LGTM(https://github.com/tsukasaoishi/lgtm)")
       source_file = Tempfile.new("lgtm_source")
       source_file.binmode
@@ -24,6 +24,6 @@ class Image < ActiveRecord::Base
       resize_file.close
 
       [data, read_image.content_type]
-    #end
+    end
   end
 end

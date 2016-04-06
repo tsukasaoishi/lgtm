@@ -16,4 +16,11 @@ class ImagesController < ApplicationController
     image = Image.create!(permit_params)
     redirect_to image
   end
+
+  def destroy
+    image = Image.find(params[:id])
+    image.destroy
+
+    redirect_to action: :index
+  end
 end
