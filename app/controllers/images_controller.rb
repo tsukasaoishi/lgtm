@@ -5,9 +5,7 @@ class ImagesController < ApplicationController
     send_data data, type: content_type, disposition: 'inline'
   end
 
-  def random
-    @image = Image.random_pickup
-    render :show
+  def index
   end
 
   def show
