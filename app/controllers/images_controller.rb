@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.page(params[:page]).per(10).order("id desc")
+    @images = Image.page(params[:page]).per(5).order("id desc")
   end
 
   def show
