@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.8.2'
 
 set :application, 'lgth'
 set :repo_url, 'git@github.com:tsukasaoishi/lgtm.git'
@@ -34,7 +34,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :rbenv_ruby, '2.3.1'
+set :rbenv_ruby, '2.4.1'
 set :rbenv_path, '/usr/local/rbenv'
 
 namespace :deploy do
