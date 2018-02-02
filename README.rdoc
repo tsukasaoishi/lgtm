@@ -1,5 +1,7 @@
 == README
 
+[![Code Climate](https://codeclimate.com/github/tsukasaoishi/lgtm/badges/gpa.svg)](https://codeclimate.com/github/tsukasaoishi/lgtm)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
