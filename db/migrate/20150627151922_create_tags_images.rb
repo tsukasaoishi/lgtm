@@ -1,4 +1,4 @@
-class CreateTagsImages < ActiveRecord::Migration
+class CreateTagsImages < ActiveRecord::Migration[5.1]
   def change
     create_table :tags_images do |t|
       t.references :tag
@@ -6,7 +6,5 @@ class CreateTagsImages < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :tags_images, :tag_id
-    add_index :tags_images, :image_id
   end
 end

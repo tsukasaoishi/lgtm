@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,27 +13,25 @@
 ActiveRecord::Schema.define(version: 20150627151922) do
 
   create_table "images", force: :cascade do |t|
-    t.string   "url",        limit: 2000
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string "url", limit: 2000
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name"
   end
-
-  add_index "tags", ["name"], name: "index_tags_on_name"
 
   create_table "tags_images", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "image_id"
+    t.integer "tag_id"
+    t.integer "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_tags_images_on_image_id"
+    t.index ["tag_id"], name: "index_tags_images_on_tag_id"
   end
-
-  add_index "tags_images", ["image_id"], name: "index_tags_images_on_image_id"
-  add_index "tags_images", ["tag_id"], name: "index_tags_images_on_tag_id"
 
 end
